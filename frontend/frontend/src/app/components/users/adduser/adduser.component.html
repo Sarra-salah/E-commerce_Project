@@ -1,0 +1,68 @@
+<form [formGroup]="registerform">
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="text" formControlName="firstname" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+        </div>
+        <div class="col-sm-6">
+            <input type="text" formControlName="lastname" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+        <input type="text" formControlName="tel" class="form-control form-control-user" id="exampleInputEmail" placeholder="phone number">
+    </div>
+    <div class="form-group">
+        <input type="email" formControlName="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <input type="password" formControlName="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+        </div>
+        <div class="col-sm-6">
+            <input type="password" formControlName="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+        </div>
+
+    </div>
+    <div class="group-gap">
+        <u><strong>  <h5 class="mb-3" style="color: rgb(89, 54, 54);size: 25px;">Admin?</h5></strong></u>
+        <div class="d-block my-3">
+
+            <div class="custom-control custom-radio">
+                <input id="false" type="radio" class="custom-control-input" value="false" name="isAdmin" formControlName="isAdmin">
+                <label class="custom-control-label" for="false">false</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+                <input id="true" type="radio" class="custom-control-input" value="true" name="isAdmin" formControlName="isAdmin">
+                <label class="custom-control-label" for="true">true</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="submitted && myForm?.errors">
+                <p>Please select either value</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="button" (click)="onReset()" class="btn btn-warning float-right">
+            Reset
+          </button>
+        <button type="button" (click)="registre()" style="background-color: green;position: left;" class="btn btn-warning float-right">
+            register
+          </button>
+
+
+    </div>
+
+
+
+    <hr>
+
+</form>
+<hr>
+
+<div class="text-center">
+    <a class="small">Already have an account? Login!</a>
+</div>

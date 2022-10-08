@@ -1,0 +1,85 @@
+<!-- Page Wrapper -->
+
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Category Table</h6>
+            <button routerLink="/addcategory" type="button" class="btn btn-primary float-right" style="background-color: #36b9cc;">add Category</button>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+             <div class="col-6">
+              <label>Search by name :</label>
+              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" (keyup)="applyFilter()" placeholder="Start searching..." >
+             </div>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th>Name</th>
+                            <th>Description</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let p of filtredcategory | paginate:{itemsPerPage: 3, currentPage:p} ; let index=index">
+                            <th scope="row">{{index+1}}</th>
+                            <td>{{p.name}}</td>
+                            <td>{{p.description}}</td>
+
+                            <td><button type="button" class="btn btn-info" [routerLink]="['/detailcategory',p._id]"> details</button>
+                            </td>
+                            <td> <button type="button" class="btn btn-danger" (click)="deleteCategory(p._id)">Delete</button><br>
+                                <td> <button type="button" class="btn btn-success" [routerLink]="['/updatecategory', p._id]">Update</button>
+                                </td>
+                        </tr>
+
+                </table>
+                <pagination-controls (pageChange)="p =$event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+<!-- End of Main Content -->
+
+<!-- Footer -->
+
+<!-- End of Footer -->
+
+
+<!-- End of Content Wrapper -->
+
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->

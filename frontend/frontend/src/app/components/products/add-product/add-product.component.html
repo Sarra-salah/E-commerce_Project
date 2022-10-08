@@ -1,0 +1,64 @@
+<form [formGroup]="form" style="position: relative">
+  <div class="form-group">
+    <label for="">name</label>
+    <input
+      type="text"
+      formControlName="name"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter name"
+    />
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">description</label>
+    <input
+      type="text"
+      formControlName="description"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="description"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">price</label>
+    <input
+      type="text"
+      formControlName="price"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="price"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">stock</label>
+    <input
+      type="text"
+      formControlName="stock"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="stock"
+    />
+  </div>
+
+  <select
+    class="form-select"
+    aria-label="Default select example"
+    formControlName="category"
+  >
+    <option *ngFor="let category of listcategory" [value]="category._id">
+      {{ category.name }}
+    </option>
+  </select>
+  <br />
+  /*
+  <!--div class="" col-sm-6 mb-3>
+        <input type="file" (change)="onFilechange($event)" name="photos" multiple class="form-control form-control-user" id="exampleRrepeatPassword" placeholder="file">
+    </div-->
+  <br />
+  <button (click)="onSubmit()" type="submit " class="btn btn-primary">
+    Submit
+  </button>
+  &nbsp;
+</form>

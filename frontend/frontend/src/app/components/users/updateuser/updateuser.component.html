@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="exampleInputEmail1">firstname</label>
+        <input type="firstname" formControlName="firstname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter firstname">
+        <small id="nameHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">lastname</label>
+        <input type="lastname" formControlName="lastname" class="form-control" id="exampleInputPassword1" placeholder="lastname">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">email</label>
+        <input type="email" formControlName="email" class="form-control" id="price" placeholder="email">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Stock</label>
+        <input type="description" formControlName="stock" class="form-control" id="stock" placeholder="stock">
+    </div>
+    <div>
+
+        <button type="submit" class="btn btn-primary" (click)="updateuser()">update</button>
+    </div>
+</form>

@@ -1,0 +1,21 @@
+<form [formGroup]="form" style="position:relative">
+    <div class="form-group">
+        <label for="">name</label>
+        <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">description</label>
+        <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1" placeholder="description">
+    </div>
+
+
+
+    <br>
+    <!--div class="" col-sm-6 mb-3>
+        <input type="file" (change)="onFilechange($event)" name="photos" multiple class="form-control form-control-user" id="exampleRrepeatPassword" placeholder="file">
+    </div-->
+    <br>
+    <button (click)="onSubmit() " type="submit " class="btn btn-primary ">Submit</button> &nbsp;
+
+</form>

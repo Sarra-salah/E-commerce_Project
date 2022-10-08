@@ -1,0 +1,104 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <br>
+    <hr>
+
+
+    <div class="card">
+        <div class="row">
+            <aside class="col-sm-5 border-right">
+                <article class="gallery-wrap">
+                    <div class="img-big-wrap">
+                        <div>
+                            <a href="#"><img src=""></a>
+                        </div>
+                    </div>
+                    <!-- slider-product.// -->
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+
+
+                            <div class="carousel-item active" *ngFor="let p of product?.galleries ;let index=index" [ngClass]="{'active': index == 0}">
+
+                                <img class="d-block w-100" [src]="getImage(p.name)" [alt]="p.description">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- slider-nav.// -->
+                </article>
+                <!-- gallery-wrap .end// -->
+            </aside>
+            <aside class="col-sm-7 ">
+                <article class="card-body p-5 ">
+                    <h3 class="title mb-3 ">{{product.name}}</h3>
+
+                    <p class="price-detail-wrap ">
+                        <span class="price h3 text-warning "> 
+		<span class="currency ">price :</span><span class="num ">{{product.price}}</span>
+                        </span>
+
+                    </p>
+                    <!-- price-detail-wrap .// -->
+                    <dl class="item-property ">
+                        <dt>Description</dt>
+                        <dd>
+                            <span>{{product.description}}
+                                </span>
+                        </dd>
+                    </dl>
+                    <dl class="param param-feature ">
+
+                    </dl>
+                    <!-- item-property-hor .// -->
+                    <dl class="param param-feature ">
+
+                    </dl>
+                    <!-- item-property-hor .// -->
+                    <dl class="param param-feature ">
+
+                    </dl>
+                    <!-- item-property-hor .// -->
+
+                    <hr>
+                    <div class="row ">
+                        <div class="col-sm-5 ">
+                            <dl class="param param-inline ">
+                                <dt>Quantity: </dt>
+                                <dd>
+
+                                    <select class="form-control form-control-sm " style="width:70px; ">
+			  		<option> {{product.stock}} </option>
+			  		
+			  	</select>
+                                </dd>
+                            </dl>
+
+                            <!-- item-property .// -->
+                        </div>
+                        <!-- col.// -->
+                        <div class="col-sm-7 ">
+
+                            <!-- item-property .// -->
+                        </div>
+                        <!-- col.// -->
+                    </div>
+                    <!-- row.// -->
+                    <hr>
+                </article>
+                <!-- card-body.// -->
+            </aside>
+            <!-- col.// -->
+        </div>
+        <!-- row.// -->
+    </div>
+    <!-- card.// -->
+
+
+</div>
+<!--container.//-->
